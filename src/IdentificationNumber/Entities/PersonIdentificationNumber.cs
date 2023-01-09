@@ -128,8 +128,8 @@ namespace IdentificationNumber.Models
             // Get the controlnumber and add it to get the full
             personIdentificationNumber._value = $"{yearMonthDay.Year / 100}{partial}{Luhn.GetControlNumber(partial)}";
 
-            // Set the numbertype
             personIdentificationNumber.Type = numberType;
+            personIdentificationNumber.DateOfBirth = yearMonthDay;
 
             // Parse and return
             return personIdentificationNumber;
