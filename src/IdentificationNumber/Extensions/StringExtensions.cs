@@ -34,7 +34,7 @@ namespace IdentificationNumber.Extensions
         /// <exception cref="ArgumentException">If the type if not of a <see cref="IdentificationNumber{T}"/> type then this exception is thrown</exception>
         public static T ToIdentificationNumber<T>(this string value) where T : IdentificationNumber<T>
         {
-            if (!typeof(T).IsAssignableFrom(typeof(IdentificationNumber<T>)))
+            if (!typeof(IdentificationNumber<T>).IsAssignableFrom(typeof(T)))
                 throw new ArgumentException("The type given is not an IdentificationNumber type!");
 
             if (typeof(PersonIdentificationNumber).IsAssignableFrom(typeof(T)) && PersonIdentificationNumber.TryParse(value, out PersonIdentificationNumber personIdentificationNumber))
