@@ -188,7 +188,7 @@ namespace IdentificationNumber.Models
             return this;
         }
 
-        private static int GetDecade(int year)
+        private int GetDecade(int year)
         {
             return Math.DivRem(year, 100, out _) * 100;
         }
